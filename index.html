@@ -1,22 +1,642 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html>
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Title</title>
-  <link rel="stylesheet" href="css/foundation-emails.css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700,900|Open+Sans:400,600,700,800" rel="stylesheet">
+  <title>RSP Awards announement</title>
+  <style>
+    /* -------------------------------------
+          GLOBAL RESETS
+      ------------------------------------- */
+
+    /*All the styling goes here*/
+
+    img {
+      border: none;
+      -ms-interpolation-mode: bicubic;
+      max-width: 100%;
+    }
+
+    body {
+      background-color: #f6f6f6;
+      font-family: 'Open Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    table {
+      border-collapse: separate;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+      width: 100%;
+      /* max-width: 100%; */
+    }
+
+    table td,
+    table th {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      vertical-align: top;
+    }
+
+
+
+    /* -------------------------------------
+          BODY & CONTAINER
+      ------------------------------------- */
+
+    .body {
+      background-color: #f6f6f6;
+      width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+    .container {
+      display: block;
+      margin: 0 auto !important;
+      /* makes it centered */
+      max-width: 700px;
+      padding: 10px;
+      width: 700px;
+    }
+
+    /* This should also be a block element, so that it will fill 100% of the .container */
+    .content {
+      box-sizing: border-box;
+      display: block;
+      margin: 0 auto;
+      max-width: 700px;
+      padding: 10px;
+    }
+
+    /* -------------------------------------
+          HEADER, FOOTER, MAIN
+      ------------------------------------- */
+    .main {
+      background: #ffffff;
+      border-radius: 3px;
+      width: 100%;
+    }
+
+    .wrapper {
+      box-sizing: border-box;
+      /*padding: 20px;*/
+    }
+
+    .content-block {
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+
+    .footer-area {
+      clear: both;
+      /*margin-top: 10px;*/
+      text-align: center;
+      width: 100%;
+      background-color: #434DA0;
+
+    }
+
+    .footer-area td,
+    .footer-area p,
+    .footer-area span,
+    .footer-area a {
+      color: white;
+      /* font-size: 12px; */
+      text-align: center;
+    }
+
+    /*  custom styling */
+    .header-text {
+      /* font-family: 'Noto Serif SC', serif; */
+      font-family: 'Merriweather', serif;
+    }
+
+    .benefit-title {
+      text-transform: uppercase;
+      font-family: 'Merriweather', serif;
+      font-style: bold;
+      color: #434DA0;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* -------------------------------------
+          TYPOGRAPHY
+      ------------------------------------- */
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: #36384B;
+      font-family: 'Merriweather', serif;
+      font-weight: 400;
+      line-height: 1.4;
+      margin: 0;
+      /* margin-bottom: 15px; */
+    }
+
+    h1 {
+      font-size: 35px;
+      font-weight: 300;
+      text-align: center;
+      text-transform: capitalize;
+    }
+
+    p,
+    ul,
+    ol {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 18px;
+      font-weight: normal;
+      margin: 0;
+      padding: 10px 0;
+      line-height: 2.25;
+      color: #36384B;
+    }
+
+    p li,
+    ul li,
+    ol li {
+      list-style-position: inside;
+      margin-left: 5px;
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: underline;
+    }
+
+    /* -------------------------------------
+          BUTTONS
+      ------------------------------------- */
+    .btn {
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .btn>tbody>tr>td {
+      padding-bottom: 15px;
+    }
+
+    .btn table {
+      width: auto;
+    }
+
+    .btn table td {
+      background-color: #ffffff;
+      border-radius: 5px;
+      text-align: center;
+      vertical-align: middle;
+      padding: 2px;
+    }
+
+    .btn a {
+      background-color: #ffffff;
+      border: solid 1px #3498db;
+      border-radius: 5px;
+      box-sizing: border-box;
+      color: #3498db;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0;
+      padding: 12px 25px;
+      text-decoration: none;
+      text-transform: capitalize;
+    }
+
+    .btn-primary table td {
+      /* background-color: #3498db; */
+    }
+
+    .btn-primary a {
+      /* background-color: #3498db; */
+      /* border-color: #3498db; */
+      /* color: #ffffff; */
+    }
+
+    /* -------------------------------------
+          OTHER STYLES THAT MIGHT BE USEFUL
+      ------------------------------------- */
+    .last {
+      margin-bottom: 0;
+    }
+
+    .first {
+      margin-top: 0;
+    }
+
+    .align-center {
+      text-align: center;
+    }
+
+    .align-right {
+      text-align: right;
+    }
+
+    .align-left {
+      text-align: left;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    .mt0 {
+      margin-top: 0;
+    }
+
+    .mb0 {
+      margin-bottom: 0;
+    }
+
+    .preheader {
+      color: transparent;
+      display: none;
+      height: 0;
+      max-height: 0;
+      max-width: 0;
+      opacity: 0;
+      overflow: hidden;
+      mso-hide: all;
+      visibility: hidden;
+      width: 0;
+    }
+
+    .powered-by a {
+      text-decoration: none;
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1px solid #f6f6f6;
+      margin: 20px 0;
+    }
+
+    .zucora-logo {
+      width: 45%;
+      display: block;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    /**/
+    .purple-background {
+      background-color: #434DA0;
+      color: white;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .purple-text {
+      color: #434DA0;
+    }
+
+    .table-th {
+      padding: 10px;
+      color: #434DA0;
+      border-bottom: 1px solid #c8c8c8;
+    }
+
+    .email-table table {
+      border-collapse: collapse;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      table-layout: fixed;
+      border: 2px solid #C8C8C8;
+    }
+
+    table tr {
+      text-align: left;
+    }
+
+    .email-table table thead tr th {
+
+      border-right: 1px solid #C8C8C8;
+    }
+
+    .email-table table tbody tr td {
+      border-right: 1px solid #C8C8C8;
+      line-height: 1.65;
+      color: #36384B;
+      font-weight: 600;
+      font-family: 'Open Sans', sans-serif;
+      word-break: break-word;
+    }
+
+    .email-table table tbody tr td {
+      padding: 10px;
+    }
+
+    /* -------------------------------------
+          RESPONSIVE AND MOBILE FRIENDLY STYLES
+      ------------------------------------- */
+    @media only screen and (max-width: 620px) {
+      table[class=body] h1 {
+        font-size: 28px !important;
+        margin-bottom: 10px !important;
+      }
+
+      table[class=body] p,
+      table[class=body] ul,
+      table[class=body] ol,
+      table[class=body] td,
+      table[class=body] span,
+      table[class=body] a {
+        font-size: 16px !important;
+      }
+
+      table[class=body] .wrapper,
+      table[class=body] .article {
+        padding: 10px !important;
+      }
+
+      table[class=body] .content {
+        padding: 0 !important;
+      }
+
+      table[class=body] .container {
+        padding: 0 !important;
+        width: 100% !important;
+      }
+
+      table[class=body] .main {
+        border-left-width: 0 !important;
+        border-radius: 0 !important;
+        border-right-width: 0 !important;
+      }
+
+      table[class=body] .btn table {
+        width: 100% !important;
+      }
+
+      table[class=body] .btn a {
+        width: 100% !important;
+      }
+
+      table[class=body] .img-responsive {
+        height: auto !important;
+        max-width: 100% !important;
+        width: auto !important;
+      }
+    }
+
+    /* -------------------------------------
+          PRESERVE THESE STYLES IN THE HEAD
+      ------------------------------------- */
+    @media all {
+      .ExternalClass {
+        width: 100%;
+      }
+
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass span,
+      .ExternalClass font,
+      .ExternalClass td,
+      .ExternalClass div {
+        line-height: 100%;
+      }
+
+      .apple-link a {
+        color: inherit !important;
+        font-family: 'Open Sans' !important +;
+        font-size: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+        text-decoration: none !important;
+      }
+
+      .btn-primary table td:hover {}
+
+      .btn-primary a:hover {}
+
+    }
+
+    @media screen and (max-width: 768px) {
+      .body {
+        width: 100%;
+      }
+
+      .email-table table {
+        /*border:0;*/
+      }
+
+      .email-table table thead {
+
+        border: none;
+        clip: react(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+
+      }
+
+      .email-table table tr {
+        display: block;
+        padding: 5px 0;
+      }
+
+      .email-table table td {
+        display: block;
+        font-size: 0.8em;
+        text-align: right;
+        border-bottom: 1px solid #333;
+      }
+
+      .email-table table tbody tr td {
+        border-right: 0;
+      }
+
+      .email-table table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: 700;
+        color: #434DA0;
+      }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/760428943e.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-  <!-- <style> -->
-  <table class="body" data-made-with-foundation>
+<body class="">
+  <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
     <tr>
-      <td class="float-center" align="center" valign="top">
-        <center>
-          
-        </center>
+      <td class="container">
+        <div class="content">
+
+          <!-- START CENTERED WHITE CONTAINER -->
+          <span class="preheader"></span>
+          <table role="presentation" class="main">
+
+            <!-- START MAIN CONTENT AREA -->
+            <tr>
+              <td class="wrapper">
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td>
+                      <div>
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td style="background-color:#434DA0;">
+                              <img src="ZucoraHome-brand-white.svg" alt="Zucra home logo." class="zucora-logo">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="background-color:#fff;padding:14px;">
+                              <h3 style="color:#434DA0;font-size: 30px;">Hello [NAME],</h3>
+                              <p>Congratulations on your purchase of a Product Protection Plan from ZucoraHome. We have more than 40 years of experience in helping Canadians keep their furniture, bedding, and appliances looking and operating like
+                                new.</p>
+                              <p>Your plan has been <span style="color:#434DA0;font-weight:700;">registered [modified] [canceled]</span> and attached is a copy of the current Registration Certificate for your Product Protection Plan for your records.
+                              </p>
+                              <p>If you have questions or would like information about your Product Protection Plan please contact ZucoraHome Customer Solutions toll-free at <span style="color:#434DA0;font-weight:700;">1-800-388-2640</span> and have
+                                this information available to help us serve you faster.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="padding:14px;">
+                              <div class="email-table">
+                                <table role="presentation" cellpadding="0" cellspacing="0">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" class="purple-background">Customer</th>
+                                      <th scope="col" class="purple-background">Retailer</th>
+                                      <th scope="col" class="purple-background">Plan Information</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td data-label="customer">BOB & CATHY SMITH <br>519-455-4231<br>bobcathysmith@gmail.com<br>123 Fake St.,<br>London, ON N5V 3K5</td>
+                                      <td data-label="Retailer">Bob's furniture <br>519-455-4821<br>552 Clarke Road<br>London, ON N5V 3K5</td>
+                                      <td data-label="Plan Information">Invoice #123456<br>Date of Sale: Mar 4, 2019<br>Date of Delivery: Oct 4, 2019<br>Registration ID: [9999999]<br><span style="color:#434DA0;font-weight:700;">Status:
+                                          [Registered]</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="padding:14px;">
+                              <div class="email-table" style="margin-top:2em;">
+                                <p class="purple-background">Plan Details</p>
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" class="table-th" style="width:10%;">QTY</th>
+                                      <th scope="col" class="table-th" style="width:12%;">Plan SKU</th>
+                                      <th scope="col" class="table-th" style="width:25%;">Program</th>
+                                      <th scope="col" class="table-th" style="width:40%;">Plan Coverage</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td data-label="QTY">1</td>
+                                      <td data-label="Plan SKU">8C07</td>
+                                      <td data-label="Program">2018 Zucora Complete</td>
+                                      <td data-label="Plan Coverage">Zucora Complete $3000 to $3999.99</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="padding:14px;">
+                              <div class="email-table" style="margin-top:2em;">
+                                <p class="purple-background">Items Covered</p>
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" class="table-th" style="width:10%;">QTY</th>
+                                      <th scope="col" class="table-th" style="width:30%;">Description</th>
+                                      <th scope="col" class="table-th" style="width:20%;">Manufacturer</th>
+                                      <th scope="col" class="table-th" style="width:13%;">Model #</th>
+                                      <th scope="col" class="table-th" style="width:12%;">Serial #</th>
+                                      <th scope="col" class="table-th" style="">Unit Price</th>
+                                    </tr>
+                                  </thead>
+
+                                  <tbody>
+                                    <tr>
+                                      <td data-label="QTY">1</td>
+                                      <td data-label="Description">Parisal Loft Soda in Fabric; Deauville Hemp</td>
+                                      <td data-label="Manufacturer">Precedent</td>
+                                      <td data-label="Model #">3015</td>
+                                      <td data-label="Serial #">N/A</td>
+                                      <td data-label="Unit Price">$3399.00</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <p style="font-size: 14px;">Click here to review the <a href="https://www.zucorahome.com/Zuc/termsservice" style="text-decoration: underline;color:#a3acff;font-weight:bold;">Terms and Conditions</a> for your Product
+                                Protection Plan.</p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <!-- START FOOTER -->
+                      <div class="footer-area">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td class="content-block">
+                              <p>Discover more at <a href="https://www.zucorahome.com/" style="text-decoration:none;font-weight:700;" target="_blank">zucorahome.com</a></p>
+                              <div>
+                                <a href="https://www.facebook.com/zucorahomesmarterliving/" target="_blank" style="padding:5px;"><i class="fab fa-facebook-f" style="font-size:1.5em;"></i></a>
+                                <a href="https://www.instagram.com/zucorahome/" target="_blank" style="padding:5px;"><i class="fab fa-instagram" style="font-size:1.5em;"></i></a>
+                                <a href="https://www.linkedin.com/company/zucorahome" target="_blank" style="padding:5px;"><i class="fab fa-linkedin-in" style="font-size:1.5em;"></i></a>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <!-- END FOOTER -->
+                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
+                        <tbody>
+                          <tr>
+                            <td align="left">
+                              <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                  <tr>
+
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- END MAIN CONTENT AREA -->
+          </table>
+
+
+
+          <!-- END CENTERED WHITE CONTAINER -->
+        </div>
       </td>
     </tr>
   </table>
 </body>
+
 </html>
