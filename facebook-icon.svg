@@ -1,0 +1,11 @@
+<svg width="320" height="512" xmlns="http://www.w3.org/2000/svg" class="svg-inline--fa fa-facebook-f fa-w-10">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path stroke="null" id="svg_1" d="m278.14,287.75l14.22,-91.936094l-88.91,0l0,-59.660234c0,-25.151953 12.42,-49.668906 52.24,-49.668906l40.42,0l0,-78.273672s-36.68,-6.211094 -71.75,-6.211094c-73.22,0 -121.08,44.033281 -121.08,123.745625l0,70.068281l-81.39,0l0,91.936094l81.39,0l0,222.25l100.17,0l0,-222.25l74.69,0z" fill="#ffffff"/>
+ </g>
+</svg>
